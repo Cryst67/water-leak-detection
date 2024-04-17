@@ -17,7 +17,7 @@ Simulated water usage data is modeled after statistics from the United States En
 For detailed EPA statistics on water usage, visit [EPA - How We Use Water](https://www.epa.gov/watersense/how-we-use-water).
 
 ## Directory Structure
-- `src/`: Contains all source scripts for the project stages, from data simulation to neural network implementation.
+- `src/`: Contains all source scripts for the project stages, from data simulation and visualization to neural network implementation.
 - `data/`: Holds the raw and processed data, including the simulated datasets and PCA-transformed files.
 - `models/`: Stores the trained neural network models.
 - `notebooks/`: Jupyter notebooks for exploratory data analysis and model evaluation.

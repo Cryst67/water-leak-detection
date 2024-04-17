@@ -23,32 +23,27 @@ def simulate_data(days=365):
         "Miscellaneous": 0.02,
     }
 
-    # DataFrame to hold the data with an index for dates
     dates = pd.date_range(start="2024-01-01", periods=days)
     data = pd.DataFrame(index=dates)
 
-    # Simulate normal usage for each category
     for category, proportion in categories.items():
         mean_usage = AVERAGE_DAILY_USE * proportion
         std_dev = mean_usage * VARIABILITY
         data[category] = np.random.normal(mean_usage, std_dev, days)
 
-    # Introduce anomalies at a specified frequency
     num_anomalies = int(days * ANOMALY_FREQUENCY)
     anomaly_days = np.random.choice(days, num_anomalies, replace=False)
-    data["Anomaly"] = 0  # Initialize anomaly column
+    data["Anomaly"] = 0
 
     for day in anomaly_days:
-        if (
-            np.random.rand() < 0.5
-        ):  # Random chance to alter each category on an anomaly day
-            for category in categories:
-                data.loc[data.index[day], category] *= np.random.uniform(
-                    *ANOMALY_MULTIPLIER
-                )
-            data.loc[data.index[day], "Anomaly"] = (
-                1  # Mark this day as having an anomaly
+        # Apply anomalies to all selected days without additional random chance
+        for category in categories:
+            data.loc[data.index[day], category] *= np.random.uniform(
+                *ANOMALY_MULTIPLIER
             )
+        data.loc[data.index[day], "Anomaly"] = 1
+
+    print(f"Anomalies generated: {data['Anomaly'].sum()}")
 
     return data
 
@@ -56,7 +51,10 @@ def simulate_data(days=365):
 def save_data(data):
     filename = "multidimensional_simulated_water_usage.csv"
     filepath = os.path.join(RAW_DATA_DIR, filename)
-    data.to_csv(filepath)
+    # Reset index before saving to move the date index into a regular column
+    data.reset_index(inplace=True)
+    data.rename(columns={"index": "Date"}, inplace=True)
+    data.to_csv(filepath, index=False)  # index=False to avoid writing row numbers
     print(f"Data saved to {filepath}")
 
 

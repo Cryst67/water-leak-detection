@@ -28,9 +28,9 @@ def normalize_data(data):
 
 
 def split_data(features, labels):
-    # Splitting the data into 80% training and 20% testing
+    # Stratified splitting of the data into 80% training and 20% testing
     X_train, X_test, y_train, y_test = train_test_split(
-        features, labels, test_size=0.2, random_state=42
+        features, labels, test_size=0.2, random_state=42, stratify=labels
     )
     return X_train, X_test, y_train, y_test
 

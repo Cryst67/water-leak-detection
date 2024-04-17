@@ -137,11 +137,6 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-# Data Files
-*.csv
-*.xlsx
-*.json
-
 # Model Files
 *.h5
 *.pb

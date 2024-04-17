@@ -32,3 +32,9 @@ To perform PCA analysis on your dataset, navigate to the project root directory 
 
 ```bash
 python src/pca_analysis.py
+```
+
+This will execute the PCA transformation and save the outputs for model training and evaluation.
+
+## Conclusion
+The PCA process simplifies the dataset while preserving the characteristics that are most important for detecting anomalies in water usage. This reduction in dimensionality can improve the efficiency and performance of the subsequent neural network model.

@@ -1,4 +1,4 @@
-# PCA Analysis Documentation
+# PCA Analysis
 
 This document details the Principal Component Analysis (PCA) process as implemented in the `pca_analysis.py` script for the Water Leak Detection Project. The corresponding Python script can be found [here](../src/pca_analysis.py).
 

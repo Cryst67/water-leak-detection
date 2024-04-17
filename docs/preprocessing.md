@@ -1,4 +1,4 @@
-# Data Preprocessing Documentation
+# Data Preprocessing
 
 This document describes the preprocessing steps implemented in the `preprocess_data.py` script for the Water Leak Detection Project. The corresponding Python script can be found [here](../src/preprocess_data.py).
 

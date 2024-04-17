@@ -20,7 +20,6 @@ For detailed EPA statistics on water usage, visit [EPA - How We Use Water](https
 - `src/`: Contains all source scripts for the project stages, from data simulation and visualization to neural network implementation.
 - `data/`: Holds the raw and processed data, including the simulated datasets and PCA-transformed files.
 - `models/`: Stores the trained neural network models.
-- `notebooks/`: Jupyter notebooks for exploratory data analysis and model evaluation.
 - `docs/`: Documentation on the project's methodology, setup, and usage instructions.
 - `assets/`: Generated plots and figures for visualization purposes.
 
